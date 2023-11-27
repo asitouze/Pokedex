@@ -1,27 +1,18 @@
-function PokemonCard() {      
+function PokemonCard(props) {     
+  console.log(`props => ${props}`); 
     return (
       <div>
-        {pokemonList.map((pokemon, i) => (
+        {pokemonList.map((props.pokemon, i) => (
           <div key={i}>
             <figure>
-              {pokemon.imgSrc ?  <img src={pokemon.imgSrc} /> :<p>???</p>}
+              {props.pokemon.imgSrc ?  <img src={props.pokemon.imgSrc} /> :<p>???</p>}
             </figure>
-            <figcaption>{pokemon.name}</figcaption>
+            <figcaption>{props.pokemon.name}</figcaption>
           </div>
         ))}
       </div>
     );
+    
   }
 
-  const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
-  
   export default PokemonCard;
