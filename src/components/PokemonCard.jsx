@@ -3,7 +3,7 @@ function PokemonCard(props) {
   console.log(`props => ${props}`); 
     return (
       <div>
-        {props.pokemonList.map((pokemon, i) => (
+        {props.pokemon.map((pokemon, i) => (
           <div key={i}>
             <figure>
               {pokemon.imgSrc ?  <img src={pokemon.imgSrc} /> :<p>???</p>}
