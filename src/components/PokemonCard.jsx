@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function PokemonCard(props) {     
   console.log(`props => ${props}`); 
     return (
