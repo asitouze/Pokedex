@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 function PokemonCard(props) {     
   const {pokemon} = props;
   console.log(`props => ${props}`); 
@@ -14,7 +15,11 @@ function PokemonCard(props) {
         ))}
       </div>
     );
-    
   }
-
+  PokemonCard.propTypes = {
+    pokemon: PropTypes.arrayOf( PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string,
+    })
+  )};
   export default PokemonCard;
