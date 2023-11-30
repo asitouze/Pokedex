@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 function PokemonCard(props) {     
+  const {pokemon} = props;
   console.log(`props => ${props}`); 
     return (
       <div>
-        {props.pokemon.map((pokemon, i) => (
+        {pokemon.map((pokemon, i) => (
           <div key={i}>
             <figure>
               {pokemon.imgSrc ?  <img src={pokemon.imgSrc} /> :<p>???</p>}
