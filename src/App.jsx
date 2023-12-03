@@ -1,23 +1,50 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from "./components/PokemonCard"
 
 function App() {
+
+  let {pokemonIndex, setPokemonIndex} = useState(0);
+
   const pokemonList = [
     {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
+        name: "bulbasaur",
+        imgSrc:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      },
+      {
+        name: "charmander",
+        imgSrc:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      },
+      {
+        name: "squirtle",
+        imgSrc:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      },
+      {
+        name: "pikachu",
+        imgSrc:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      },
+      {
+        name: "mew",
+      },
+    ];
+
+  const handleClickMoins = () => {
+    setPokemonIndex(pokemonIndex - 1 )
+  }
+  const handleClickPlus = () => {
+    setPokemonIndex(pokemonIndex + 1 )
+  }
   return (
     <div>
-      <PokemonCard pokemon={pokemonList}/>
+      <button type='button' name='precedent' placeholder='précédent' onClick={handleClickMoins} ></button>
+      <button type='button' name='suivant' placeholder='suivant' onClick={handleClickPlus}></button>
+      <PokemonCard pokemon={pokemonList[0]}/>
     </div>
   );
 }
@@ -25,45 +52,5 @@ function App() {
 
 
 export default App;
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-
-// function App() {
-//   return (
-//     <div>
-//       <h1>Hello React</h1>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 
