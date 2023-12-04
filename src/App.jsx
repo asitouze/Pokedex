@@ -6,7 +6,7 @@ import PokemonCard from "./components/PokemonCard"
 
 function App() {
 
-  let {pokemonIndex, setPokemonIndex} = useState(0);
+  const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const pokemonList = [
     {
@@ -33,18 +33,26 @@ function App() {
         name: "mew",
       },
     ];
-
+    
+    console.log(pokemonIndex);
   const handleClickMoins = () => {
-    setPokemonIndex(pokemonIndex - 1 )
+    setPokemonIndex(pokemonIndex - 1)
   }
   const handleClickPlus = () => {
-    setPokemonIndex(pokemonIndex + 1 )
+    setPokemonIndex(pokemonIndex + 1)
   }
+
   return (
     <div>
-      <button type='button' name='precedent' placeholder='précédent' onClick={handleClickMoins} ></button>
-      <button type='button' name='suivant' placeholder='suivant' onClick={handleClickPlus}></button>
-      <PokemonCard pokemon={pokemonList[0]}/>
+      {pokemonIndex > 0 && 
+        <button type='button' name='precedent' onClick={handleClickMoins} >Précédent</button>
+      }
+      {pokemonIndex < pokemonList.length - 1 && 
+        <button type='button' name='suivant' onClick={handleClickPlus}>Suivant</button>
+      }
+
+      <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
+  
     </div>
   );
 }
