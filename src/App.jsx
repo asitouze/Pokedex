@@ -34,17 +34,18 @@ function App() {
         name: "mew",
       },
     ];
-    
+    const handleClickMoins = () => {
+      setPokemonIndex(pokemonIndex - 1)
+    }
+    const handleClickPlus = () => {
+      setPokemonIndex(pokemonIndex + 1)
+    }
   
 
   return (
     <div>
-
-      <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemon={pokemonList[pokemonIndex]}/>
-      
-
+      <NavBar pokemonIndex={pokemonIndex} pokemonList={pokemonList} handleClickMoins={handleClickMoins} handleClickPlus={handleClickPlus}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-  
     </div>
   );
 }
