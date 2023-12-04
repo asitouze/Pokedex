@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
-function NavBar({ pokemonList}) {
-    return(
-        <nav>
-          {pokemon.map((pokemonList, name) => (
-          <div key={pokemonList.name}>
-            <button name="pokemon"> pokemonList.name</button>
-            ))}
-        </nav>
-    )    
+function NavBar({ pokemonList, pokemonIndex}) {
+  return (
+    <nav>
+      {pokemonList.map((pokemon, pokemonIndex) => (
+        <div key={pokemonIndex}>
+          <button name="pokemon"> {pokemon.name}</button>
+        </div>
+      ))}
+    </nav>
+  );
 }
 NavBar.propTypes = {
   pokemonList: PropTypes.arrayOf(PropTypes.shape({
