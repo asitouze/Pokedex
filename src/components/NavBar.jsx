@@ -3,7 +3,13 @@ import "./NavBar.css";
 function NavBar({ pokemonList, setPokemonIndex}) {
 
   const handleClick = (e) => {
+    if (parseInt(e.target.value) === 3)
+    {
+      alert("pika pikachu !!!")
+    }
+    console.log(e.target.value);
    setPokemonIndex(e.target.value);
+   
   }
 
   return (
